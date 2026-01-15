@@ -6,11 +6,27 @@
 /*   By: edi-maio <edi-maio@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/08 18:28:01 by edi-maio          #+#    #+#             */
-/*   Updated: 2026/01/08 21:52:57 by edi-maio         ###   ########.fr       */
+/*   Updated: 2026/01/15 20:09:44 by edi-maio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/minitalk.h"
+
+void	send_char(char c, int pid)
+{
+	int	bit;
+
+	bit = 7;
+	while (bit >= 0)
+	{
+		if (c >> bit & 1)
+			kill(pid, SIGUSR1);
+		else
+			kill(pid, SIGUSR2);
+		bit--;
+		usleep(1000);
+	}
+}
 
 int	main(int ac, char **av)
 {
@@ -22,7 +38,11 @@ int	main(int ac, char **av)
 		i = 0;
 		pid = ft_atoi(av[1]);
 		while (av[2][i] != '\0')
-			kill(pid, SIGINT);
+		{
+			send_char(av[2][i], pid);
+			i++;
+		}
+		send_char(av[2][i], pid);
 	}
 	else
 	{

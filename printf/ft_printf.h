@@ -6,7 +6,7 @@
 /*   By: edi-maio <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/20 17:08:03 by edi-maio          #+#    #+#             */
-/*   Updated: 2025/10/25 18:04:21 by edi-maio         ###   ########.fr       */
+/*   Updated: 2026/01/15 18:25:02 by edi-maio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	ft_putstr(char *s);
 int	ft_putnbr_base(long n, const char *base);
 int	ft_putunbr(unsigned int n, int total);
 int	ft_putptrhexa(unsigned long s, int prefix, int total);
-int	ft_strlen(char const *str);
+int	ft_slen(char const *str);
 int	ft_strncmp(const char *s1, const char *s2, size_t n);
 
 #endif

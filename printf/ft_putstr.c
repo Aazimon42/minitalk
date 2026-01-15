@@ -6,11 +6,11 @@
 /*   By: edi-maio <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 17:33:59 by edi-maio          #+#    #+#             */
-/*   Updated: 2025/10/22 17:20:56 by edi-maio         ###   ########.fr       */
+/*   Updated: 2026/01/15 18:57:03 by edi-maio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/ft_printf.h"
+#include "ft_printf.h"
 
 int	ft_putstr(char *s)
 {
@@ -22,7 +22,7 @@ int	ft_putstr(char *s)
 		len = ft_putstr("(null)");
 		return (len);
 	}
-	len = ft_strlen(s);
+	len = ft_slen(s);
 	i = write(1, s, len);
 	if (i == -1)
 		return (0);

@@ -1,21 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: edi-maio <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/13 11:34:49 by edi-maio          #+#    #+#             */
-/*   Updated: 2025/10/15 15:56:55 by edi-maio         ###   ########.fr       */
+/*   Created: 2025/10/15 17:32:36 by edi-maio          #+#    #+#             */
+/*   Updated: 2025/10/19 18:53:23 by edi-maio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(const char *str)
+#include "libft.h"
+
+void	ft_putchar_fd(char c, int fd)
 {
 	int	i;
 
-	i = 0;
-	while (str[i])
-		i++;
-	return (i);
+	i = write(fd, &c, 1);
+	if (i == -1)
+		return ;
 }
