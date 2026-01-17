@@ -6,7 +6,7 @@
 /*   By: edi-maio <edi-maio@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/08 18:28:04 by edi-maio          #+#    #+#             */
-/*   Updated: 2026/01/15 20:05:36 by edi-maio         ###   ########.fr       */
+/*   Updated: 2026/01/17 10:53:50 by edi-maio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,15 @@ char	*ft_realloc(char *s1, char c)
 	if (!s1)
 	{
 		s2 = ft_calloc(sizeof(char), 2);
+		if (!s2)
+			return (0);
 		s2[0] = c;
 	}
 	else
 	{
 		s2 = ft_calloc(sizeof(char), ft_strlen(s1) + 2);
+		if (!s2)
+			return (0);
 		i = 0;
 		while (s1[i])
 		{
@@ -53,7 +57,8 @@ void	signal_handler(int signal)
 		if (c == 0)
 		{
 			ft_printf("%s\n", str);
-			free(str);
+			if (str)
+				free(str);
 			str = NULL;
 		}
 		else

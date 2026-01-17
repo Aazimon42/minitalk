@@ -6,7 +6,7 @@
 /*   By: edi-maio <edi-maio@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/08 18:28:01 by edi-maio          #+#    #+#             */
-/*   Updated: 2026/01/15 20:09:44 by edi-maio         ###   ########.fr       */
+/*   Updated: 2026/01/17 09:56:23 by edi-maio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	send_char(char c, int pid)
 		else
 			kill(pid, SIGUSR2);
 		bit--;
-		usleep(1000);
+		usleep(100);
 	}
 }
 
